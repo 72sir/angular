@@ -1,6 +1,8 @@
 (function() {
 	'use strict';
 	
+	
+	
 	angular.module('app', []).controller('AppController', ['$scope', function($scope){
 		$scope.username = 'Leonard';
 		
@@ -32,6 +34,12 @@
 			$scope.textClass = name;
 		}
 		
+		$scope.bool = true;
+		
+		$scope.changeBool = function() {
+			$scope.bool = !$scope.bool ;
+		}		
+
 		
 		
 		

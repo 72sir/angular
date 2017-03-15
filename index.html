@@ -15,61 +15,71 @@
     <div class="container">
 		<div class="row">
 			<div ng-controller="AppController">
-				<br/>
-				<p>
-					Hi, <em> {{ username }} </em>!
-				</p>
-				<button ng-click="changeUsername('Vasia')">Hellou Vasia!</button>
-				<button ng-click="changeUsername('Leo')">Hellou Vasia!</button>
-				
-				<br/><br/>
-				<table>
-					<tr>
-						<th>First Name</th>
-						<th>Last Name</th>
-					</tr>
-					<tr ng-repeat="user in userArray">
-						<td>{{ user[0] }}</td>
-						<td>{{ user[1] }}</td>
-					</tr>
-				</table>
-				
-				<br/><br/>
-				<table>
-					<tr>
-						<th>First Name</th>
-						<th>Last Name</th>
-					</tr>
-					<tr ng-repeat="user in userObject">
-						<td>{{ user.firstName }}</td>
-						<td>{{ user.lastName }}</td>
-					</tr>
-				</table>
-				
-				<br/><br/>
-				<input type="text" ng-model="randomUserModel">
-				<button ng-click="randomUserModelAlert()"> alert my random name!</button>
-				
-				<br/><br/>
-				<input type="checkbox" id="box1" name="box1" ng-model="checkboxModel.box1">
-				<label for="box1"> Show box1! </label>
-				<br/>
-				<input type="checkbox" id="box2" name="box2" ng-model="checkboxModel.box2">
-				<label for="box2"> Show box2! </label>
-				
-				<div class="c-component__box" ng-show="checkboxModel.box1">
-					<h3>I am box 1</h3>
-					<p>woo woo!</p>
+				<div class="col-lg-2">
+					<p>
+						Hi, <em> {{ username }} </em>!
+					</p>
 				</div>
-				<div class="c-component__box" ng-hide="checkboxModel.box2">
-					<h3>I am box 2</h3>
-					<p>woo woo!</p>
+				<div class="col-lg-2">
+					<button ng-click="changeUsername('Vasia')">Hellou Vasia!</button>
+					<button ng-click="changeUsername('Leo')">Hellou Vasia!</button>
 				</div>
+				<div class="col-lg-4">
+					<table>
+						<tr>
+							<th>First Name</th>
+							<th>Last Name</th>
+						</tr>
+						<tr ng-repeat="user in userArray">
+							<td>{{ user[0] }}</td>
+							<td>{{ user[1] }}</td>
+						</tr>
+					</table>
+				</div>
+				<div class="col-lg-4">
+					<table>
+						<tr>
+							<th>First Name</th>
+							<th>Last Name</th>
+						</tr>
+						<tr ng-repeat="user in userObject">
+							<td>{{ user.firstName }}</td>
+							<td>{{ user.lastName }}</td>
+						</tr>
+					</table>
+				</div>
+				<!-- --->
+				<div class="col-lg-2">
+					<input type="text" ng-model="randomUserModel">
+					<button ng-click="randomUserModelAlert()"> alert my random name!</button>
+				</div>
+				<div class="col-lg-2">
+					<input type="checkbox" id="box1" name="box1" ng-model="checkboxModel.box1">
+					<label for="box1"> Show box1! </label>
+				</div>
+				<div class="col-lg-2">
+					<input type="checkbox" id="box2" name="box2" ng-model="checkboxModel.box2">
+					<label for="box2"> Show box2! </label>
+				</div>
+				<div class="col-lg-3">
+					<div class="c-component__box" ng-show="checkboxModel.box1">
+						<h3>I am box 1</h3>
+						<p>woo woo!</p>
+					</div>
+				</div>
+				<div class="col-lg-3">
+					<div class="c-component__box" ng-hide="checkboxModel.box2">
+						<h3>I am box 2</h3>
+						<p>woo woo!</p>
+					</div>
+				</div>
+				<!-- --->
+				<div class="col-lg-12">
 				
-				<hr>
-				
-				<p class="c-component__text" ng-class="textClass">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere molestias explicabo aspernatur inventore nam fugit, nihil numquam distinctio totam hic, iure porro, magnam consequuntur nemo deleniti dicta amet quo assumenda.</p>
-				<button ng-click="changeTextClass('pink')">Add a pink class</button>
+					<p class="c-component__text" ng-class="textClass">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere molestias explicabo aspernatur inventore nam fugit, nihil numquam distinctio totam hic, iure porro, magnam consequuntur nemo deleniti dicta amet quo assumenda.</p>
+					<button ng-click="changeTextClass('pink'); changeBool();" >Add a pink class</button>
+					<button ng-click="changeTextClass('black'); changeBool();" ng-hide="bool">Add a black color class</button>
+				</div>
 				
 			</div> <!-- /ng-controller -->
 		</div> <!-- /row -->
